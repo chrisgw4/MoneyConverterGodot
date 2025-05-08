@@ -21,3 +21,6 @@ https://www.thoughtco.com/faces-on-us-currency-4153995
 Download the latest release and run the exe!
 
 Then all you need to do is enter a valid number and hit the start button!
+
+## Example of how it can look!
+![image](https://github.com/user-attachments/assets/f8cd3807-c326-40eb-8224-7f423710a8a8)
