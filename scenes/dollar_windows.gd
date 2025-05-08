@@ -17,22 +17,24 @@ func update_image(value:int) -> void:
 	anim_sprite.play(money_dict[value])
 	
 	size = anim_sprite.sprite_frames.get_frame_texture(money_dict[value], 0).get_size()
+
 	
-	var screen_size:Vector2 = DisplayServer.screen_get_size(0)
-	var primary_index:int = DisplayServer.get_primary_screen()
 	
-	# Calculate the offset of X with multiple windows
-	var offset_x:int = 0
-	for i in range(0, primary_index):
-		offset_x += DisplayServer.screen_get_size(0).x
-		
+	# Get the screen that is currently active with keyboard focus
+	var screen_index:int = DisplayServer.get_keyboard_focus_screen()
+	
+	# Get the screen position to calculate the offset
+	var screen_pos = DisplayServer.screen_get_position(screen_index)
+	
+	# Get the total screen size of the focused screen
+	var screen_size:Vector2 = DisplayServer.screen_get_size(screen_index)
 	
 	# Calculate the screen realestate that the bills can take up
-	screen_size.x -= size.x*2
+	screen_size.x -= size.x
 	screen_size.y -= size.y
 	
 	# Choose a random position to be at on the screen
-	var x:int = randi_range(0, screen_size.x) + offset_x
+	var x:int = randi_range(0, screen_size.x) + screen_pos.x
 	var y:int = randi_range(0, screen_size.y)
 	
 	position = Vector2(x, y)
