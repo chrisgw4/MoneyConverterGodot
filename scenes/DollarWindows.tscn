@@ -1,0 +1,129 @@
+[gd_scene load_steps=15 format=3 uid="uid://bma0fro6j5ikj"]
+
+[ext_resource type="Script" path="res://scenes/dollar_windows.gd" id="1_6tvbl"]
+[ext_resource type="Texture2D" uid="uid://cn2nq1xfd3muj" path="res://Artwork/Fifty Dollar.webp" id="1_74edj"]
+[ext_resource type="Texture2D" uid="uid://bv76tj78if8rc" path="res://Artwork/One Dollar.webp" id="1_adyfc"]
+[ext_resource type="Texture2D" uid="uid://bgo56jq2ifbmb" path="res://Artwork/Five Dollar.webp" id="2_r6mdi"]
+[ext_resource type="Texture2D" uid="uid://bslvn4nmjq250" path="res://Artwork/Five Hundred Dollar.webp" id="3_1l1ht"]
+[ext_resource type="Texture2D" uid="uid://dysk03qwwx46u" path="res://Artwork/Five Thousand Dollar.webp" id="4_6jjb6"]
+[ext_resource type="Texture2D" uid="uid://bkyr4otq7pasr" path="res://Artwork/One Hundred Dollar.webp" id="6_s3hnn"]
+[ext_resource type="Texture2D" uid="uid://ciqysx3f7lbtp" path="res://Artwork/One Hundred Thousand Dollar.webp" id="7_86noy"]
+[ext_resource type="Texture2D" uid="uid://dmoyepes42kcl" path="res://Artwork/One Thousand Dollar.webp" id="8_getr5"]
+[ext_resource type="Texture2D" uid="uid://dfvbr4t0hssx0" path="res://Artwork/Ten Dollar.webp" id="9_sf756"]
+[ext_resource type="Texture2D" uid="uid://bnfj7afwgbc6i" path="res://Artwork/Ten Thousand Dollar.webp" id="10_kb47e"]
+[ext_resource type="Texture2D" uid="uid://b82146hjqwwpg" path="res://Artwork/Twenty Dollar.webp" id="11_stfj8"]
+[ext_resource type="Texture2D" uid="uid://ceou50mwd1vg1" path="res://Artwork/Two Dollar.webp" id="12_g0bnd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gw45g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_74edj")
+}],
+"loop": true,
+"name": &"fifty dollar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r6mdi")
+}],
+"loop": true,
+"name": &"five dollar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1l1ht")
+}],
+"loop": true,
+"name": &"five hundred dollar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6jjb6")
+}],
+"loop": true,
+"name": &"five thousand dollar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_adyfc")
+}],
+"loop": true,
+"name": &"one dollar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_s3hnn")
+}],
+"loop": true,
+"name": &"one hundred dollar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_86noy")
+}],
+"loop": true,
+"name": &"one hundred thousand dollar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_getr5")
+}],
+"loop": true,
+"name": &"one thousand dollar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_sf756")
+}],
+"loop": true,
+"name": &"ten dollar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_kb47e")
+}],
+"loop": true,
+"name": &"ten thousand dollar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_stfj8")
+}],
+"loop": true,
+"name": &"twenty dollar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_g0bnd")
+}],
+"loop": true,
+"name": &"two dollar",
+"speed": 5.0
+}]
+
+[node name="DollarWindows" type="Window" node_paths=PackedStringArray("anim_sprite")]
+size = Vector2i(750, 327)
+unresizable = true
+always_on_top = true
+script = ExtResource("1_6tvbl")
+anim_sprite = NodePath("AnimatedSprite2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gw45g")
+animation = &"twenty dollar"
+centered = false
